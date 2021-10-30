@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New Flight</title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
+  <%- include('../partials/nav') %>
+  <main>
   <h1>Enter a New Flight</h1>
   <form action="/flights" method="POST">
     <label>Airline
@@ -19,8 +19,8 @@
       </select>
     <label>Airport
       <select name="airport">
-        <option value="DEN">DEN</option>
         <option value="AUS">AUS</option>
+        <option value="DEN" selected>DEN</option>
         <option value="DFW">DFW</option>
         <option value="LAX">LAX</option>
         <option value="SAN">SAN</option>
@@ -34,5 +34,6 @@
     </label><br>
     <button type="submit">Add Flight</button>
   </form>
+</main>
 </body>
 </html>

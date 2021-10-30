@@ -14,7 +14,12 @@ function newFlight(req, res) {
 }
 
 function create(req, res) {
-  
+  Flight.create(req.body, function(error, flight) {
+    if(error) {
+      res.redirect('flights/new')
+    }
+    res.redirect('/flights')
+  })
 }
 
 export {
