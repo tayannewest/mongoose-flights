@@ -48,10 +48,17 @@ function createTicket(req, res) {
   })
 }
 
+function deleteFlight(req, res) {
+  Flight.findByIdAndDelete(req.params.id, function(error, movie) {
+    res.redirect('/flights')
+  })
+}
+
 export {
   index,
   newFlight as new,
   create,
   show,
-  createTicket
+  createTicket,
+  deleteFlight as delete
 }
