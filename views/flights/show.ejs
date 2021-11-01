@@ -14,15 +14,14 @@
     <div>Departure Date: </div>
     <div><%= flight.departs %></div>
   </section>
-<form>
 <h2>Tickets</h2>
-  <form 
+<form 
   id='add-ticket'
   action='/flights/<%= flight._id %>/tickets'
   method='POST'
-  >
+>
   <label for="seat">Seat Number (A1 - F99):</label>
-  <input name="seat" required pattern="[A-F][1-9]\d?">
+  <input name="seat" value="ex. A24" required pattern="[A-F][1-9]\d?">
   <label for="price">Price:</label>
   <input type="number" name="price">
   <button type="submit">Add Ticket</button>

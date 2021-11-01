@@ -60,5 +60,5 @@ export {
   create,
   show,
   createTicket,
-  deleteFlight as delete
+  deleteFlight as delete,
 }
