@@ -18,6 +18,15 @@
       <%- flight.destinations.map(d => `<li>${d.airport}</li>`).join('') %>
     </ul>
   </section>
+  <form id="add-airport-to-destinations"
+  action="???"
+  method="POST"
+  >
+    <select name="airportId">
+      <%- airports.map(a => `<option value="${a._id}">${a.name}</option>`).join('') %>
+    </select>
+    <button type="submit">Add to Destinations</button>
+  </form>
 <h2>Tickets</h2>
 <form 
   id='add-ticket'

@@ -60,6 +60,15 @@ function deleteFlight(req, res) {
   })
 }
 
+function addToDestinations(req, res) {
+  Flight.findById(req.params.id, function(error, flight) {
+    flight.destinations.push(req.body.airportId)
+    flight.save(function(error) {
+      res.redirect(`/flights/${flight._id}`)
+    })
+  })
+}
+
 export {
   index,
   newFlight as new,
@@ -67,4 +76,5 @@ export {
   show,
   createTicket,
   deleteFlight as delete,
+  addToDestinations
 }
