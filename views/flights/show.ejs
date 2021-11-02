@@ -13,6 +13,10 @@
     <div><%= flight.flightNo %></div>
     <div>Departure Date: </div>
     <div><%= flight.departs %></div>
+    <div>Destinations:</div>
+    <ul>
+      <%- flight.destinations.map(d => `<li>${d.airport}</li>`).join('') %>
+    </ul>
   </section>
 <h2>Tickets</h2>
 <form 
@@ -21,11 +25,12 @@
   method='POST'
 >
   <label for="seat">Seat Number (A1 - F99):</label>
-  <input name="seat" text="ex. A24" required pattern="[A-F][1-9]\d?">
+  <input name="seat" required pattern="[A-F][1-9]\d?" placeholder="Ex: A24">
   <label for="price">Price:</label>
   <input type="number" name="price">
   <button type="submit">Add Ticket</button>
 </form>
+</section>
 <% if (flight.tickets.length) { %>
 <table>
   <thead>
@@ -38,7 +43,7 @@
     <% flight.tickets.forEach(function(ticket) { %>
       <tr>
         <td><%= ticket.seat %></td>
-        <td><%= ticket.price %></td>
+        <td><%= `$${ticket.price}` %></td>
       </tr>
     <% }) %>
   </tbody>
