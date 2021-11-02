@@ -1,8 +1,17 @@
 </head>
 <body>
 <nav>
-  <ul>
-    <li><a href="/flights">View Flights</a></li>
-    <li><a href="/flights/new">Add a Flight</a></li>
-  </ul>
+  <a 
+    href="/destinations/new"
+    <%- title === 'Add a Destination' ? 'class="active"' : '' %>
+    >Add a Destination
+  </a>
+    <a href="/flights/new"
+    <%- title === 'Add a Flight' ? 'class="active"' : '' %>
+    >Add a Flight
+  </a>
+    <a href="/flights"
+    <%- title === 'All Flights' ? 'class="active"' : '' %>
+    >All Flights
+  </a>
 </nav>
