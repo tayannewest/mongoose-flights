@@ -55,8 +55,21 @@ function createTicket(req, res) {
 }
 
 function deleteFlight(req, res) {
-  Flight.findByIdAndDelete(req.params.id, function(error, movie) {
+  Flight.findByIdAndDelete(req.params.id, function(error, flight) {
     res.redirect('/flights')
+  })
+}
+
+function deleteTicket(req, res) {
+  console.log('work plz')
+  Flight.findById(req.params.id, function(error, flight) {
+    flight.tickets.forEach(function(ticket) {
+      if (ticket._id === req.params.ticketId) {
+        ticket.remove()
+        flight.save()
+      }
+    })
+    res.redirect(`/flights/${flight._id}`)
   })
 }
 
@@ -76,5 +89,6 @@ export {
   show,
   createTicket,
   deleteFlight as delete,
+  deleteTicket,
   addToDestinations
 }
