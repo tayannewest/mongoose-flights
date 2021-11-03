@@ -14,9 +14,9 @@
     <div>Departure Date: </div>
     <div><%= flight.departs %></div>
     <div>Destinations:</div>
-    <ul>
-      <%- flight.destinations.map(d => `<li>${d.airport}</li>`).join('') %>
-    </ul>
+    <div>
+      <%- flight.destinations.map(d => `${d.airport}`).join(', ') %>
+    </div>
   </section>
   <form id="add-airport-to-destinations"
   action="/flights/<%= flight._id %>/destinations"
@@ -51,7 +51,7 @@
   <tbody>
     <% flight.tickets.forEach(function(ticket) { %>
       <tr>
-        <td><%= ticket.seat %></td>
+        <td><i class="fas fa-chair"></i> <%= ticket.seat %></td>
         <td><%= `$${ticket.price}` %></td>
         <td>
         <form action="/flights/<%= flight._id %>/tickets/<%= ticket._id %>?_method=DELETE" method="POST">

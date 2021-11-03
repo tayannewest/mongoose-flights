@@ -24,7 +24,7 @@ body {
   grid-template-areas:
     "nav"
     "main";
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 body > main {
@@ -42,7 +42,7 @@ body > main h1:first-child {
 
 body > nav {
   grid-area: nav;
-  background-image: linear-gradient(to right, mintcream, paleturquoise);
+  background-image: linear-gradient(to right, white, paleturquoise);
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -86,4 +86,9 @@ h1 {
   font-family: 'Uchen', serif;
   font-style: italic;
   font-size: 38px;
+}
+
+.t-header {
+  font-family: 'Uchen', serif;
+  font-size: 2rem;
 }
