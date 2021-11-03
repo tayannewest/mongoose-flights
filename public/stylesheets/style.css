@@ -20,7 +20,7 @@ body {
   color: #424748;
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 60px 1fr;
   grid-template-areas:
     "nav"
     "main";
