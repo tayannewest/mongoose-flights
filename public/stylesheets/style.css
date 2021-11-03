@@ -15,7 +15,8 @@ html {
 }
 
 body {
-  background-color: mintcream;
+  background-image: url("https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=");
+  background-size: cover;
   margin: 0;
   color: #424748;
   min-height: 100vh;
@@ -32,7 +33,6 @@ body > main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: linear-gradient(white, mintcream, paleturquoise);
   padding: 20px;
 }
 
@@ -42,7 +42,7 @@ body > main h1:first-child {
 
 body > nav {
   grid-area: nav;
-  background-image: linear-gradient(to right, white, paleturquoise);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(168, 146, 228, 0.8));
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -79,7 +79,7 @@ nav > a.active {
 
 .fas::before {
   font-family: "Font Awesome 5 Free";
-  font-size: 2.4rem;
+  font-size: 2.8rem;
 }
 
 h1 {
