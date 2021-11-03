@@ -61,17 +61,13 @@ function deleteFlight(req, res) {
 }
 
 function deleteTicket(req, res) {
-  console.log('work plz')
   Flight.findById(req.params.id, function(error, flight) {
-    flight.tickets.forEach(function(ticket) {
-      if (ticket._id === req.params.ticketId) {
-        ticket.remove()
-        flight.save()
-      }
+    flight.tickets.remove({_id:req.params.ticketId}) 
+        flight.save(function(error) {
+          res.redirect(`/flights/${flight._id}`)
+        })
     })
-    res.redirect(`/flights/${flight._id}`)
-  })
-}
+  }
 
 function addToDestinations(req, res) {
   Flight.findById(req.params.id, function(error, flight) {

@@ -20,7 +20,7 @@ router.post('/:id/destinations', flightsCtrl.addToDestinations)
 // localhost:3000/flights/:id
 router.delete('/:id', flightsCtrl.delete)
 
-router.delete('/:id', flightsCtrl.deleteTicket)
+router.delete('/:id/tickets/:ticketId', flightsCtrl.deleteTicket)
 
 
 export {
