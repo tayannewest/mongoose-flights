@@ -105,4 +105,11 @@ h2 {
   border: none;
   border-radius: 5px;
   padding: 10px 15px 10px 15px;
+  color: #424748;
+  background-color: mintcream;
+}
+
+button:hover {
+  background-color: #424748;
+  color: mintcream;
 }
